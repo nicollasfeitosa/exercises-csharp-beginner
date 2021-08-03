@@ -66,6 +66,14 @@ namespace Exercicios
                     exercise10();
                     break;
 
+                case 11:
+                    exercise11();
+                break;
+
+                case 12:
+                    exercise12();
+                break;
+
                 default:
                     Console.WriteLine("Opção invalida!");
                     break;
@@ -213,6 +221,48 @@ namespace Exercicios
             {
                 Console.Write(count + " X " + numero + " = " + (count * numero) + "\n");
             }
+            Console.WriteLine("\n");
+        }
+
+        static void exercise11()
+        {
+            Console.WriteLine("Exercicio média \n");
+            Console.WriteLine("11 - Elabore um algoritmo que calcule a idade média de X alunos:");
+
+            Console.WriteLine("Digite quantos alunos você deseja inserir:");
+            double limiter = double.Parse(Console.ReadLine());
+
+            List<double> list = new List<double>();
+            for (int i = 1; i <= limiter; i++)
+            {
+                Console.WriteLine("Digite a idade do aluno " + i + ":");
+                list.Add(double.Parse(Console.ReadLine()));
+            }
+
+            Console.WriteLine("\nA média de idade dos alunos é: " + list.Average());
+            Console.WriteLine("\n");
+        }
+
+        static void exercise12()
+        {
+            Console.WriteLine("Exercicio consumo médio \n");
+
+            Console.WriteLine("12 - Elabore um algoritmo que calcule o consumo médio de um veículo por quilometragem com um litro de gasolina.:");
+
+            Console.WriteLine("Quilometragem inicial:");
+            double start = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Quilometragem final:");
+            double end = double.Parse(Console.ReadLine());
+
+            double totalDistance = (end - start);
+
+            Console.WriteLine("Digite o total de combustível gasto:");
+            double totalFuel = double.Parse(Console.ReadLine());
+
+            double avgFuel = totalDistance / totalFuel;
+
+            Console.WriteLine("\nA média de consumo em sua viagem de " + totalDistance + "KM é: " + avgFuel);
             Console.WriteLine("\n");
         }
 
