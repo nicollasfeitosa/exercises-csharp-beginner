@@ -74,6 +74,14 @@ namespace Exercicios
                     exercise12();
                 break;
 
+                case 13:
+                    exercise13();
+                break;
+
+                case 14:
+                    exercise14();
+                break;
+
                 default:
                     Console.WriteLine("Opção invalida!");
                     break;
@@ -264,6 +272,67 @@ namespace Exercicios
 
             Console.WriteLine("\nA média de consumo em sua viagem de " + totalDistance + "KM é: " + avgFuel);
             Console.WriteLine("\n");
+        }
+
+        static void exercise13()
+        {
+            Console.WriteLine("Exercicio idade \n");
+            Console.WriteLine("13 - Desenvolva um algoritmo onde o usuário irá informar a idade dele e será dada a seguinte resposta:");
+            Console.WriteLine("Idade < 14 = criança");
+            Console.WriteLine("Idade < 18 = adolescente");
+            Console.WriteLine("Idade >= 18 = adulto");
+            Console.WriteLine("Idade >= 65 = idoso");
+
+            Console.WriteLine("Digite sua idade: ");
+            int idade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(getIdade(idade));
+        }
+        static string getIdade(int idade)
+        {
+            if (idade < 14)
+                return "Criança";
+            if (idade < 18)
+                return "Adolescente";
+            if (idade >= 18)
+                return "Adulto";
+            if (idade >= 65)
+                return "Idoso";
+            return "Não definido";
+        }
+
+        static void exercise14()
+        {
+            Console.WriteLine("Exercicio idade \n");
+            Console.WriteLine("14 - Desenvolva um algoritmo onde o usuário irá informar o nome, e 4notas dele.  Calcule então a média dele e em seguida mostra na tela o seguinte resultado::");
+            Console.WriteLine("Nome do aluno:");
+            Console.WriteLine("Média obtida");
+            Console.WriteLine("O aluno está");
+            Console.WriteLine("O aluno estará aprovado caso a média seja >= 7, senão estará reprovado.");
+
+            Console.WriteLine("Digite o nome do aluno:");
+            string nome = Console.ReadLine();
+
+            Console.WriteLine("Digite quantas notas você deseja inserir:");
+            double limiter = double.Parse(Console.ReadLine());
+
+            List<double> list = new List<double>();
+            for (int i = 1; i <= limiter; i++)
+            {
+                Console.WriteLine("Digita a nota " + i + ":");
+                list.Add(double.Parse(Console.ReadLine()));
+            }
+
+            double media = list.Average();
+
+            Console.WriteLine("\nA média da nota do aluno é: " + media);
+
+            Console.WriteLine("O Aluno " + nome + " está: ");
+
+            if (media >= 7)
+                Console.WriteLine("APROVADO!");
+            else
+                Console.WriteLine("REPROVADO!");
         }
 
         static double calcularAreaCirculo(double raio, double pi)
